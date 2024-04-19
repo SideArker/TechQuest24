@@ -28,97 +28,107 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Connection = new MySqlConnector.MySqlConnection();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.dbConnection = new MySqlConnector.MySqlConnection();
+            this.GetUser = new MySqlConnector.MySqlCommand();
+            this.AddUser = new MySqlConnector.MySqlCommand();
+            this.GetUserData = new MySqlConnector.MySqlCommand();
+            this.GetMeal = new MySqlConnector.MySqlCommand();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ScanCodeText = new System.Windows.Forms.Label();
             this.ZSTLogo = new System.Windows.Forms.PictureBox();
-            this.Lens = new System.Windows.Forms.PictureBox();
-            this.Text = new System.Windows.Forms.Label();
-            this.MainPanel = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.userDataScreen = new CanteenApp.UserDataScreen();
             ((System.ComponentModel.ISupportInitialize)(this.ZSTLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Lens)).BeginInit();
-            this.MainPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Connection
+            // dbConnection
             // 
-            this.Connection.ProvideClientCertificatesCallback = null;
-            this.Connection.ProvidePasswordCallback = null;
-            this.Connection.RemoteCertificateValidationCallback = null;
+            this.dbConnection.ConnectionString = "server=localhost; uid=root; pwd=; database=icanteen";
+            this.dbConnection.ProvideClientCertificatesCallback = null;
+            this.dbConnection.ProvidePasswordCallback = null;
+            this.dbConnection.RemoteCertificateValidationCallback = null;
             // 
-            // pictureBox1
+            // GetUser
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.GetUser.CommandText = "SELECT * FROM `consumers` WHERE `id` = @id;";
+            this.GetUser.CommandTimeout = 0;
+            this.GetUser.Connection = this.dbConnection;
+            this.GetUser.Transaction = null;
+            this.GetUser.UpdatedRowSource = System.Data.UpdateRowSource.None;
             // 
-            // label1
+            // AddUser
             // 
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
-            this.label1.TabIndex = 0;
+            this.AddUser.CommandTimeout = 0;
+            this.AddUser.Connection = this.dbConnection;
+            this.AddUser.Transaction = null;
+            this.AddUser.UpdatedRowSource = System.Data.UpdateRowSource.None;
             // 
-            // pictureBox2
+            // GetUserData
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.GetUserData.CommandTimeout = 0;
+            this.GetUserData.Connection = this.dbConnection;
+            this.GetUserData.Transaction = null;
+            this.GetUserData.UpdatedRowSource = System.Data.UpdateRowSource.None;
+            // 
+            // GetMeal
+            // 
+            this.GetMeal.CommandTimeout = 0;
+            this.GetMeal.Connection = this.dbConnection;
+            this.GetMeal.Transaction = null;
+            this.GetMeal.UpdatedRowSource = System.Data.UpdateRowSource.None;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(56)))), ((int)(((byte)(107)))));
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1902, 96);
+            this.label3.TabIndex = 7;
+            // 
+            // ScanCodeText
+            // 
+            this.ScanCodeText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ScanCodeText.Font = new System.Drawing.Font("Segoe UI Black", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ScanCodeText.Location = new System.Drawing.Point(262, 168);
+            this.ScanCodeText.Name = "ScanCodeText";
+            this.ScanCodeText.Size = new System.Drawing.Size(1455, 493);
+            this.ScanCodeText.TabIndex = 8;
+            this.ScanCodeText.Text = "Zeskanuj kod kreskowy albo wyszukaj osobę ręcznie";
+            this.ScanCodeText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ScanCodeText.Click += new System.EventHandler(this.ScanCodeText_Click);
             // 
             // ZSTLogo
             // 
             this.ZSTLogo.Image = global::CanteenApp.Properties.Resources.ZST_logo_Nadruk_448x212;
-            this.ZSTLogo.Location = new System.Drawing.Point(14, 10);
+            this.ZSTLogo.Location = new System.Drawing.Point(14, 15);
             this.ZSTLogo.Name = "ZSTLogo";
-            this.ZSTLogo.Size = new System.Drawing.Size(175, 104);
+            this.ZSTLogo.Size = new System.Drawing.Size(289, 131);
             this.ZSTLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ZSTLogo.TabIndex = 0;
+            this.ZSTLogo.TabIndex = 1;
             this.ZSTLogo.TabStop = false;
             // 
-            // Lens
+            // panel1
             // 
-            this.Lens.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Lens.Image = global::CanteenApp.Properties.Resources.lupa;
-            this.Lens.Location = new System.Drawing.Point(683, 10);
-            this.Lens.Name = "Lens";
-            this.Lens.Size = new System.Drawing.Size(104, 104);
-            this.Lens.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Lens.TabIndex = 3;
-            this.Lens.TabStop = false;
+            this.panel1.Controls.Add(this.userDataScreen);
+            this.panel1.Controls.Add(this.ZSTLogo);
+            this.panel1.Controls.Add(this.ScanCodeText);
+            this.panel1.Location = new System.Drawing.Point(0, 100);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1902, 934);
+            this.panel1.TabIndex = 9;
             // 
-            // Text
+            // userDataScreen
             // 
-            this.Text.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Text.Font = new System.Drawing.Font("Segoe UI Black", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Text.Location = new System.Drawing.Point(130, 146);
-            this.Text.Name = "Text";
-            this.Text.Size = new System.Drawing.Size(584, 226);
-            this.Text.TabIndex = 2;
-            this.Text.Text = "Zeskanuj kod kreskowy albo wyszukaj osobę ręcznie";
-            this.Text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // MainPanel
-            // 
-            this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.MainPanel.Controls.Add(this.ZSTLogo);
-            this.MainPanel.Controls.Add(this.Text);
-            this.MainPanel.Controls.Add(this.Lens);
-            this.MainPanel.Location = new System.Drawing.Point(0, 0);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(800, 450);
-            this.MainPanel.TabIndex = 4;
-            this.MainPanel.Visible = false;
+            this.userDataScreen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.userDataScreen.Location = new System.Drawing.Point(3, 3);
+            this.userDataScreen.Name = "userDataScreen";
+            this.userDataScreen.Size = new System.Drawing.Size(1902, 928);
+            this.userDataScreen.TabIndex = 9;
             // 
             // Main
             // 
@@ -126,31 +136,32 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.MainPanel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "Main";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "Stołówka";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ZSTLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Lens)).EndInit();
-            this.MainPanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private MySqlConnector.MySqlConnection Connection;
-        private PictureBox pictureBox1;
-        private Label label1;
-        private PictureBox pictureBox2;
+
+        private MySqlConnector.MySqlConnection dbConnection;
+        private MySqlConnector.MySqlCommand GetUser;
+        private MySqlConnector.MySqlCommand AddUser;
+        private MySqlConnector.MySqlCommand GetUserData;
+        private MySqlConnector.MySqlCommand GetMeal;
+        private Label label3;
+        private Label ScanCodeText;
         private PictureBox ZSTLogo;
-        private PictureBox Lens;
-        private Label Text;
-        private Panel MainPanel;
+        private Panel panel1;
+        private UserDataScreen userDataScreen;
     }
 }
