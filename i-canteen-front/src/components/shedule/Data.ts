@@ -1,9 +1,9 @@
 const DataShedule = [
-    {
-        date: '12-04-2024',
-        mealSet: 'zestaw obiadowy zupa zupa i jajko w proszku na śmietane będzie szkoła',
-        allergens: 'Brak'
-      },
+  {
+    date: '12-04-2024',
+    mealSet: 'zestaw obiadowy zupa zupa i jajko\nw proszku na śmietane będzie szkoła',
+    allergens: 'Brak'
+  },  
       {
         date: '13-04-2024',
         mealSet: 'Zestaw B',

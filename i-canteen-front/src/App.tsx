@@ -21,7 +21,6 @@ function App() {
               </>
             } />
             <Route  path="/admin" element={<Admin />} />
-
             <Route path="/konto/:login" element={
                 <Account />
             } />
