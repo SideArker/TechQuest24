@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import Hamburger from 'hamburger-react';
 import logoZst from '../../assets/zst-logo.png';
+import { TextField } from '@mui/material';
 
 const Header = () => {
   const [isOpen, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
+  const [login,setLogin] = useState("")
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 0);
   };
@@ -33,15 +34,18 @@ const Header = () => {
           </button>
         </div>
         <div className={`${isOpen ? 'flex' : 'hidden'} absolute md:static inset-x-0 top-full md:flex flex-col md:flex-row items-center justify-end bg-[#1d4f91] md:bg-transparent p-5 md:p-0 transition-all duration-200`}>
-          <a href="#home" className="text-white text-lg mt-4 md:mt-0 px-5 py-3 md:py-2 md:mr-4">
+          <a href="/" className="text-white text-lg mt-4 md:mt-0 px-5 py-3 md:py-2 md:mr-4">
             Strona główna
           </a>
           <a href="#stolowka" className="text-white text-lg mt-4 md:mt-0 px-5 py-3 md:py-2 md:mr-4">
             Stołówka
           </a>
-          <a href="#Opcje" className="text-white text-lg mt-4 md:mt-0 px-5 py-3 md:py-2">
-            Konto
+          <a href={`/konto/${login}`} className="text-white text-lg mt-4 md:mt-0 px-5 py-3 md:py-2">
+            Zaloguj się
           </a>
+            <TextField onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                  setLogin(event.target.value);
+              }} id="outlined-basic" variant="standard" color='primary' sx={{ input: { color: 'darkgray' } }} />
         </div>
       </nav>
     </header>

@@ -11,7 +11,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ambiot/material-ui-multiple-dates-picker": "^1.0.3",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@mantine/core": "^7.8.0",
+    "@mantine/hooks": "^7.8.0",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/lab": "^5.0.0-alpha.170",
+    "@mui/material": "^5.15.15",
+    "@mui/x-date-pickers": "^7.2.0",
+    "date-fns": "^3.6.0",
+    "dayjs": "^1.11.10",
     "hamburger-react": "^2.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

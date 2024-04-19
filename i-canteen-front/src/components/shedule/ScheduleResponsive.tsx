@@ -5,10 +5,10 @@ const ScheduleResponsive = () => {
   const [opened, { open, close }] = useDisclosure(false);
   return (
     <div>
-        <Modal opened={opened} onClose={close} withCloseButton={false} className='border-2 barder-red-500'>
+        <Modal opened={opened} onClose={close} withCloseButton={false}>
             MODAL DZIAŁA!!!!!
         </Modal>
-        <Button onClick={open}>Open Modal</Button>
+        <Button onClick={() => open()}>Open Modal</Button>
     </div>
   )
 }

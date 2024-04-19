@@ -4,6 +4,7 @@ import { ConsumerOutput, ConsumerInput} from '../../database/models/consumer'
 
 const consumersRouter = Router()
 consumersRouter.get('/:id', async (req,res) => {
+    console.log("dhadahsdhs")
     const id = Number(req.params.id)
     const result = await consumerController.getById(id)
     return res.status(200).send(result)

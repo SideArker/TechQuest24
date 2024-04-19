@@ -1,11 +1,5 @@
 import DataShedule from './Data';
 import harmonogramText from '../../assets/Harmonogram.svg'
-import { useDisclosure } from '@mantine/hooks';
-import { Modal, Button } from '@mantine/core';
-import { MantineProvider } from '@mantine/core';
-import ScheduleResponsive from './ScheduleResponsive';
-
-
 const Schedule = () => {
 
   return (
@@ -16,12 +10,7 @@ const Schedule = () => {
                 <div className='bg-[#3279D3] w-[75%] md:w-[45%] mx-auto rounded-full text-white absolute md:relative top-[-35px]  shadow-md left-1/2 transform -translate-x-1/2 md:left-auto md:translate-x-0'>
                     <h1 className='text-center p-2 font-extrabold text-[24px] md:text-[34px]'>Jadłospis</h1>
                 </div>
-              
-
-                <MantineProvider >
-                    <ScheduleResponsive />
-                </MantineProvider>
-
+            
                 <div className='bg-white mt-[40px] md:mt-[50px] flex justify-center items-center w-[95%] mx-auto rounded-md'>
                 <table className='table-auto w-full'>
                     <thead className='border-b'>
