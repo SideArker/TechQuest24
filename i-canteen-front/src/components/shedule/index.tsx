@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import DataSchedule from './Data';
 import harmonogramText from '../../assets/Harmonogram.svg';
 import { Modal, Box, Typography, Button, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+=======
+import DataShedule from './Data';
+import harmonogramText from '../../assets/Harmonogram.svg'
+>>>>>>> c0785b2599d13a3dc0b13c5c1fbd16f580fa05b4
 
 const Schedule = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
