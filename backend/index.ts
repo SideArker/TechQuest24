@@ -1,9 +1,13 @@
-import express from 'express'
-const app = express()
+import express, { json } from 'express'
+import router from './api/routes/index'
+require("dotenv").config()
+const app = express()  
 
-app.get('/', (res,req) =>{
-    req.send(`<h1>hello</h1>`)
-})
+app.get("/api", (req, res) => {
+    res.json({ message: "Hello from server!" });
+  });
+   
+app.use("/api/v1",router)
 app.listen(3001, () => {
-    console.log(`[server]: Server is running at http://localhost:3001`);
+    console.log(process.env.DB_HOST);
   });
