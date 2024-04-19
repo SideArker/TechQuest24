@@ -30,16 +30,16 @@
         {
             this.LogoUser = new System.Windows.Forms.PictureBox();
             this.userInfoPanel = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.Class = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.Role = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.Surname = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.PersonName = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Code = new System.Windows.Forms.Label();
+            this.lable3 = new System.Windows.Forms.Label();
             this.PersonCode = new System.Windows.Forms.Label();
+            this.label01 = new System.Windows.Forms.Label();
             this.userInfoLabel = new System.Windows.Forms.Label();
             this.DinnerStatusPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,13 +49,15 @@
             this.dateText = new System.Windows.Forms.Label();
             this.LogsPanel = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.HistoryLayout = new System.Windows.Forms.FlowLayoutPanel();
+            this.HistoryLabel1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LogoUser)).BeginInit();
             this.userInfoPanel.SuspendLayout();
             this.DinnerStatusPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.LogsPanel.SuspendLayout();
+            this.HistoryLayout.SuspendLayout();
             this.SuspendLayout();
             // 
             // LogoUser
@@ -72,16 +74,16 @@
             // userInfoPanel
             // 
             this.userInfoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(147)))), ((int)(((byte)(222)))));
-            this.userInfoPanel.Controls.Add(this.label7);
+            this.userInfoPanel.Controls.Add(this.Class);
             this.userInfoPanel.Controls.Add(this.label8);
-            this.userInfoPanel.Controls.Add(this.label5);
+            this.userInfoPanel.Controls.Add(this.Role);
             this.userInfoPanel.Controls.Add(this.label6);
+            this.userInfoPanel.Controls.Add(this.Surname);
             this.userInfoPanel.Controls.Add(this.label1);
-            this.userInfoPanel.Controls.Add(this.label4);
             this.userInfoPanel.Controls.Add(this.PersonName);
-            this.userInfoPanel.Controls.Add(this.label3);
-            this.userInfoPanel.Controls.Add(this.Code);
+            this.userInfoPanel.Controls.Add(this.lable3);
             this.userInfoPanel.Controls.Add(this.PersonCode);
+            this.userInfoPanel.Controls.Add(this.label01);
             this.userInfoPanel.Controls.Add(this.userInfoLabel);
             this.userInfoPanel.Location = new System.Drawing.Point(18, 169);
             this.userInfoPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -89,16 +91,16 @@
             this.userInfoPanel.Size = new System.Drawing.Size(588, 627);
             this.userInfoPanel.TabIndex = 5;
             // 
-            // label7
+            // Class
             // 
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(0, 570);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(585, 55);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "0000000";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Class.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Class.ForeColor = System.Drawing.Color.White;
+            this.Class.Location = new System.Drawing.Point(0, 570);
+            this.Class.Name = "Class";
+            this.Class.Size = new System.Drawing.Size(585, 55);
+            this.Class.TabIndex = 14;
+            this.Class.Text = "0000000";
+            this.Class.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8
             // 
@@ -108,19 +110,19 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(585, 55);
             this.label8.TabIndex = 13;
-            this.label8.Text = "Imie:";
+            this.label8.Text = "Klasa:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // Role
             // 
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(0, 460);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(585, 55);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "0000000";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Role.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Role.ForeColor = System.Drawing.Color.White;
+            this.Role.Location = new System.Drawing.Point(0, 460);
+            this.Role.Name = "Role";
+            this.Role.Size = new System.Drawing.Size(585, 55);
+            this.Role.TabIndex = 12;
+            this.Role.Text = "0000000";
+            this.Role.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
@@ -130,30 +132,30 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(585, 55);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Imie:";
+            this.label6.Text = "Rola:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Surname
+            // 
+            this.Surname.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Surname.ForeColor = System.Drawing.Color.White;
+            this.Surname.Location = new System.Drawing.Point(0, 350);
+            this.Surname.Name = "Surname";
+            this.Surname.Size = new System.Drawing.Size(585, 55);
+            this.Surname.TabIndex = 10;
+            this.Surname.Text = "0000000";
+            this.Surname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 350);
+            this.label1.Location = new System.Drawing.Point(0, 300);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(585, 55);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "0000000";
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Nazwisko:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(0, 300);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(585, 55);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Imie:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PersonName
             // 
@@ -166,38 +168,38 @@
             this.PersonName.Text = "0000000";
             this.PersonName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // lable3
             // 
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(0, 190);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(585, 55);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Imie:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Code
-            // 
-            this.Code.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Code.ForeColor = System.Drawing.Color.White;
-            this.Code.Location = new System.Drawing.Point(0, 130);
-            this.Code.Name = "Code";
-            this.Code.Size = new System.Drawing.Size(585, 55);
-            this.Code.TabIndex = 6;
-            this.Code.Text = "0000000";
-            this.Code.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lable3.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lable3.ForeColor = System.Drawing.Color.White;
+            this.lable3.Location = new System.Drawing.Point(0, 190);
+            this.lable3.Name = "lable3";
+            this.lable3.Size = new System.Drawing.Size(585, 55);
+            this.lable3.TabIndex = 7;
+            this.lable3.Text = "Imie:";
+            this.lable3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PersonCode
             // 
-            this.PersonCode.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PersonCode.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PersonCode.ForeColor = System.Drawing.Color.White;
-            this.PersonCode.Location = new System.Drawing.Point(0, 80);
+            this.PersonCode.Location = new System.Drawing.Point(0, 130);
             this.PersonCode.Name = "PersonCode";
             this.PersonCode.Size = new System.Drawing.Size(585, 55);
-            this.PersonCode.TabIndex = 5;
-            this.PersonCode.Text = "Kod:";
+            this.PersonCode.TabIndex = 6;
+            this.PersonCode.Text = "0000000";
             this.PersonCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label01
+            // 
+            this.label01.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label01.ForeColor = System.Drawing.Color.White;
+            this.label01.Location = new System.Drawing.Point(0, 80);
+            this.label01.Name = "label01";
+            this.label01.Size = new System.Drawing.Size(585, 55);
+            this.label01.TabIndex = 5;
+            this.label01.Text = "Kod:";
+            this.label01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // userInfoLabel
             // 
@@ -293,12 +295,12 @@
             this.LogsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LogsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(147)))), ((int)(((byte)(222)))));
             this.LogsPanel.Controls.Add(this.label11);
-            this.LogsPanel.Controls.Add(this.flowLayoutPanel1);
+            this.LogsPanel.Controls.Add(this.HistoryLayout);
             this.LogsPanel.Controls.Add(this.label10);
             this.LogsPanel.Location = new System.Drawing.Point(1097, 169);
             this.LogsPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LogsPanel.Name = "LogsPanel";
-            this.LogsPanel.Size = new System.Drawing.Size(452, 641);
+            this.LogsPanel.Size = new System.Drawing.Size(484, 641);
             this.LogsPanel.TabIndex = 16;
             // 
             // label11
@@ -313,17 +315,32 @@
             this.label11.Text = "Historia";
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // flowLayoutPanel1
+            // HistoryLayout
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.HistoryLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(56)))), ((int)(((byte)(107)))));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 100);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(420, 528);
-            this.flowLayoutPanel1.TabIndex = 3;
+            this.HistoryLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(56)))), ((int)(((byte)(107)))));
+            this.HistoryLayout.Controls.Add(this.HistoryLabel1);
+            this.HistoryLayout.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.HistoryLayout.Location = new System.Drawing.Point(16, 100);
+            this.HistoryLayout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.HistoryLayout.Name = "HistoryLayout";
+            this.HistoryLayout.Padding = new System.Windows.Forms.Padding(5, 10, 0, 0);
+            this.HistoryLayout.Size = new System.Drawing.Size(452, 528);
+            this.HistoryLayout.TabIndex = 3;
+            // 
+            // HistoryLabel1
+            // 
+            this.HistoryLabel1.AutoSize = true;
+            this.HistoryLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HistoryLabel1.ForeColor = System.Drawing.Color.White;
+            this.HistoryLabel1.Location = new System.Drawing.Point(8, 10);
+            this.HistoryLabel1.Name = "HistoryLabel1";
+            this.HistoryLabel1.Size = new System.Drawing.Size(257, 28);
+            this.HistoryLabel1.TabIndex = 0;
+            this.HistoryLabel1.Text = "19.04.2024 - Kupiono obiad";
+            this.HistoryLabel1.Visible = false;
             // 
             // label10
             // 
@@ -334,7 +351,7 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(0, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(70, 54);
+            this.label10.Size = new System.Drawing.Size(102, 54);
             this.label10.TabIndex = 2;
             this.label10.Text = "Historia";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -351,12 +368,13 @@
             this.Controls.Add(this.LogoUser);
             this.Name = "UserDataScreen";
             this.Size = new System.Drawing.Size(1600, 800);
-            this.Load += new System.EventHandler(this.UserDataScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.LogoUser)).EndInit();
             this.userInfoPanel.ResumeLayout(false);
             this.DinnerStatusPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.LogsPanel.ResumeLayout(false);
+            this.HistoryLayout.ResumeLayout(false);
+            this.HistoryLayout.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -365,26 +383,27 @@
 
         private PictureBox LogoUser;
         private Panel userInfoPanel;
-        private Label Code;
-        private Label PersonCode;
+        public Label PersonCode;
+        private Label label01;
         private Label userInfoLabel;
-        private Label PersonName;
-        private Label label3;
+        public Label PersonName;
+        private Label lable3;
         private Panel DinnerStatusPanel;
         private Label label2;
-        private Label DinnerStatus;
+        public Label DinnerStatus;
         private Panel panel1;
         private Label TimeText;
         private Label dateText;
         private Panel LogsPanel;
-        private FlowLayoutPanel flowLayoutPanel1;
         private Label label10;
         private Label label11;
-        private Label label7;
+        public Label Class;
         private Label label8;
-        private Label label5;
+        public Label Role;
         private Label label6;
+        public Label Surname;
         private Label label1;
-        private Label label4;
+        public Label HistoryLabel1;
+        public FlowLayoutPanel HistoryLayout;
     }
 }

@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MySqlConnector;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+using Timer = System.Windows.Forms.Timer;
 namespace CanteenApp
 {
     public partial class UserDataScreen : UserControl
@@ -15,11 +8,20 @@ namespace CanteenApp
         public UserDataScreen()
         {
             InitializeComponent();
+            dateText.Text = DateTime.Now.ToString();
+            TimeText.Text = DateTime.Now.ToString("HH:mm:ss");
+
+            Timer timer = new Timer();
+            timer.Tick += new EventHandler(TimerTick);
+            timer.Interval = 1000;
+            timer.Start();
+
         }
 
-        private void UserDataScreen_Load(object sender, EventArgs e)
+        void TimerTick(Object myObject, EventArgs myEventArgs)
         {
-
+            TimeText.Text = DateTime.Now.ToString("HH:mm:ss");
         }
+
     }
 }

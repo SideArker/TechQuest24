@@ -1,74 +1,151 @@
 using BarcodeScannerLib;
 using GlobalHook;
 using MySqlConnector;
-using System.Diagnostics;
+using System.Data;
+using System.Text.Json.Serialization;
 using Timer = System.Windows.Forms.Timer;
+using Newtonsoft.Json;
+using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using System.Reflection;
 
 namespace CanteenApp
 {
+
     public partial class Main : Form
     {
 
         BarcodeScanner barcodeScanner = new BarcodeScanner();
 
+        string searchBarText = "";
+        int index = 0;
+
         public Main()
         {
             InitializeComponent();
-            userDataScreen.Visible = false;
+            userDataScreen.Hide();
             HookManager.KeyDown += barcodeScanner.KeyDown;
             barcodeScanner.OnScanned += onBarcodeScan;
-            //dateText.Text = DateTime.Now.ToString();
-            //TimeText.Text = DateTime.Now.ToString("HH:mm:ss");
-
-            //GetUser.Parameters.Add("@id", MySqlDbType.VarChar);
-
-            //Lens.BringToFront();
-
-            Timer timer = new Timer();
-            timer.Tick += new EventHandler(TimerTick);
-            timer.Interval = 1000;
-            timer.Start();
+            GetUser.Parameters.Add("@id", MySqlDbType.VarChar);
+            GetUserData.Parameters.Add("@id", MySqlDbType.VarChar);
+            searchBar.SearchBox.TextChanged += new EventHandler(OnTextChange);
+            searchBar.BringToFront();
         }
 
-        void TimerTick(Object myObject, EventArgs myEventArgs)
-        {
-            //TimeText.Text = DateTime.Now.ToString("HH:mm:ss");
-        }
+
 
         void onBarcodeScan(object sender, OnScanEventArgs e)
         {
-            Console.WriteLine("In database");
 
-            //MainPanel.Visible = false;
-
-            //userDataPanel.Visible = true;
-            userDataScreen.Visible = true;
-            //try
-            //{
-            //    dbConnection.Open();
-            //    GetUser.Parameters["@id"].Value = e.barcode;
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() => onBarcodeScan(sender, e)));
+                return;
+            }
 
 
-            //    using (MySqlDataReader reader = GetUser.ExecuteReader())
-            //    {
-            //        if(reader.HasRows)
-            //        {
-
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("No user found");
-            //        }
-
-            //    }
-
-            //}
-            //catch (Exception ex)
-            //{ MessageBox.Show(ex.Message); }
+            try
+            {
+                dbConnection.Open();
+                GetUser.Parameters["@id"].Value = e.barcode;
 
 
+                using (MySqlDataReader reader = GetUser.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        userDataScreen.Visible = true;
+                        MainScreenPanel.Visible = false;
 
-            //dbConnection.Close();
+                        if (searchBar.Visible)
+                        {
+                            searchBar.Visible = false;
+                            searchBar.ResetText();
+                        }
+                    }
+                    else
+                    {
+                        errorLabel.Visible = true;
+                    }
+                    reader.Close();
+                }
+
+
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message); }
+            finally
+            {
+                dbConnection.Close();
+            }
+
+            // Updating values
+            try
+            {
+                dbConnection.Open();
+                GetUserData.Parameters["@id"].Value = e.barcode;
+
+                using (MySqlDataReader reader = GetUserData.ExecuteReader())
+                {
+                    if(reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            userDataScreen.PersonCode.Text = e.barcode;
+                            userDataScreen.PersonName.Text = (string)reader.GetValue(0);
+                            userDataScreen.Surname.Text = (string)reader.GetValue(1);
+                            userDataScreen.Class.Text = (string)reader.GetValue(2);
+                            userDataScreen.Role.Text = (bool)reader.GetValue(3) == true ? "Nauczyciel" : "Uczeñ";
+
+                            string json = (string)reader.GetValue(4);
+
+                            DaysSchema schema = JsonConvert.DeserializeObject<DaysSchema>(json);
+
+                            int currentDay = DateTime.Now.Day;
+                            int currentMonth = DateTime.Now.Month;
+
+                            var currentSchemaDay = schema.Days.Find(x => x.Day == currentDay && x.Month == currentMonth);
+
+                            DayInfo dayInfo = currentSchemaDay as DayInfo;
+                            
+                            if (dayInfo != null)
+                            {
+                                if(dayInfo.IsGiven)
+                                {
+                                    userDataScreen.DinnerStatus.Text = "WYDANY";
+                                    userDataScreen.DinnerStatus.ForeColor = Color.Orange;
+
+                                }
+                                else
+                                {
+                                    userDataScreen.DinnerStatus.Text = "POSIADANY";
+                                    userDataScreen.DinnerStatus.ForeColor = Color.Green;
+                                }
+                            }
+                            else
+                            {
+                                userDataScreen.DinnerStatus.Text = "NIE KUPIONY";
+                                userDataScreen.DinnerStatus.ForeColor = Color.Red;
+                            }
+
+                        }
+                    }
+
+                    reader.Close();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dbConnection.Close();
+            }
+
+
+
         }
 
 
@@ -89,9 +166,27 @@ namespace CanteenApp
             base.WndProc(ref message);
         }
 
-        private void ScanCodeText_Click(object sender, EventArgs e)
-        {
 
+        private void SearchIcon_Click(object sender, EventArgs e)
+        {
+            searchBar.Visible = !searchBar.Visible;
+            searchBar.SearchBox.Select();
+        }
+
+        private void HomeIcon_Click(object sender, EventArgs e)
+        {
+            userDataScreen.Visible = false;
+            searchBar.Visible = false;
+            MainScreenPanel.Visible = true;
+            errorLabel.Visible = false;
+        }
+
+        void OnTextChange(object sender, EventArgs e)
+        {
+            if(searchBar.SearchBox.Text.Length >= 8)
+            {
+                onBarcodeScan(null, new OnScanEventArgs(searchBar.SearchBox.Text));
+            }
         }
     }
 }

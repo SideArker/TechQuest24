@@ -4,7 +4,6 @@ C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\bin\Debug\net6.0-windows\CanteenApp.
 C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\bin\Debug\net6.0-windows\CanteenApp.dll
 C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\bin\Debug\net6.0-windows\CanteenApp.pdb
 C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\obj\Debug\net6.0-windows\CanteenApp.csproj.AssemblyReference.cache
-C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\obj\Debug\net6.0-windows\CanteenApp.Main.resources
 C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\obj\Debug\net6.0-windows\CanteenApp.csproj.GenerateResource.cache
 C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\obj\Debug\net6.0-windows\CanteenApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\obj\Debug\net6.0-windows\CanteenApp.AssemblyInfoInputs.cache
@@ -23,3 +22,6 @@ C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\bin\Debug\net6.0-windows\System.Diag
 C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
 C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\bin\Debug\net6.0-windows\MySqlConnector.dll
 C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\obj\Debug\net6.0-windows\CanteenApp.UserDataScreen.resources
+C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\obj\Debug\net6.0-windows\CanteenApp.Main.resources
+C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\obj\Debug\net6.0-windows\CanteenApp.SearchBar.resources
