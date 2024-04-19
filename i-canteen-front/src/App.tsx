@@ -24,6 +24,10 @@ function App() {
             <Route path="/konto/:login" element={
                 <Account />
             } />
+            <Route  path="/admin"/>
+            <Route path="/konto/:login" element={
+                <Account />
+            } />
 
           </Routes>
           <Footer />
