@@ -3,6 +3,8 @@ import Header from "./components/header/index"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Hero from "./components/hero/index"
 import Shedule from "./components/shedule/index"
+import Footer from './components/footer';
+
 
 function App() {
   return (
@@ -17,7 +19,9 @@ function App() {
                 <Shedule />
               </>
             } />
+            <Route  path="/admin"/>
           </Routes>
+          <Footer />
         </BrowserRouter>
       </div>
     </>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Hamburger from 'hamburger-react';
 import logoZst from '../../assets/zst-logo.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isOpen, setOpen] = useState(false);
@@ -33,15 +34,15 @@ const Header = () => {
           </button>
         </div>
         <div className={`${isOpen ? 'flex' : 'hidden'} absolute md:static inset-x-0 top-full md:flex flex-col md:flex-row items-center justify-end bg-[#1d4f91] md:bg-transparent p-5 md:p-0 transition-all duration-200`}>
-          <a href="#home" className="text-white text-lg mt-4 md:mt-0 px-5 py-3 md:py-2 md:mr-4">
+          <Link to="/" className="text-white text-lg mt-4 md:mt-0 px-5 py-3 md:py-2 md:mr-4">
             Strona główna
-          </a>
-          <a href="#stolowka" className="text-white text-lg mt-4 md:mt-0 px-5 py-3 md:py-2 md:mr-4">
-            Stołówka
-          </a>
-          <a href="#Opcje" className="text-white text-lg mt-4 md:mt-0 px-5 py-3 md:py-2">
+          </Link>
+          <Link to="/admin" className="text-white text-lg mt-4 md:mt-0 px-5 py-3 md:py-2 md:mr-4">
+            Admin
+          </Link>
+          <Link to="" className="text-white text-lg mt-4 md:mt-0 px-5 py-3 md:py-2">
             Konto
-          </a>
+          </Link>
         </div>
       </nav>
     </header>
