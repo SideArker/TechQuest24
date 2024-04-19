@@ -1,9 +1,10 @@
-import express from 'express'
+import express, { json } from 'express'
 const app = express()
 
-app.get('/', (res,req) =>{
-    req.send(`<h1>hello</h1>`)
-})
-app.listen(3001, () => {
-    console.log(`[server]: Server is running at http://localhost:3001`);
+app.get("/api", (req, res) => {
+    res.json({ message: "Hello from server!" });
+  });
+  
+app.listen(process.env.PORT, () => {
+    console.log("hi");
   });
