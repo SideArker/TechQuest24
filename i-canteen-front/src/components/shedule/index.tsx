@@ -1,16 +1,19 @@
 import DataShedule from './Data';
 import harmonogramText from '../../assets/Harmonogram.svg'
+
+import { MantineProvider } from '@mantine/core';
+import ScheduleResponsive from './ScheduleResponsive';
+
 const Schedule = () => {
 
   return (
     <>
         <img src={harmonogramText} alt="" className='mt-[100px]' />
-        <section className='w-[80%] mx-auto mt-[13vh] mb-[100px]'>
+        <section className='w-[80%] mx-auto mt-[-50px] mb-[100px]'>
             <div className='relative text-[30px] text-black bg-[#3279D3] rounded-xl p-[15px] '>
                 <div className='bg-[#3279D3] w-[75%] md:w-[45%] mx-auto rounded-full text-white absolute md:relative top-[-35px]  shadow-md left-1/2 transform -translate-x-1/2 md:left-auto md:translate-x-0'>
                     <h1 className='text-center p-2 font-extrabold text-[24px] md:text-[34px]'>Jadłospis</h1>
                 </div>
-            
                 <div className='bg-white mt-[40px] md:mt-[50px] flex justify-center items-center w-[95%] mx-auto rounded-md'>
                 <table className='table-auto w-full'>
                     <thead className='border-b'>
