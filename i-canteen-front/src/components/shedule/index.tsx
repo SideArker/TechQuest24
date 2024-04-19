@@ -1,9 +1,6 @@
 import DataShedule from './Data';
 import harmonogramText from '../../assets/Harmonogram.svg'
 
-import { MantineProvider } from '@mantine/core';
-import ScheduleResponsive from './ScheduleResponsive';
-
 const Schedule = () => {
 
   return (
@@ -28,8 +25,8 @@ const Schedule = () => {
                             return (
                                 <tr key={index}>
                                     <td className='px-4 py-2 text-[21px] text-center w-1/4 border-b border-r'>{item.date}</td>
-                                    <td className='px-4 py-2 text-[21px] text-center w-1/2 border-b border-r hidden md:table-cell'>{item.mealSet}</td>
-                                    <td className='px-4 py-2 text-[21px] text-center w-1/4 border-r border-b hidden md:table-cell'>{item.allergens}</td>
+                                    <td className='px-4 py-2 text-[21px]  w-1/2 border-b border-r hidden md:table-cell'>{item.mealSet}</td>
+                                    <td className='px-4 py-2 text-[21px]  w-1/4 border-r border-b hidden md:table-cell'>{item.allergens}</td>
                                 </tr>   
                             );
                         })}

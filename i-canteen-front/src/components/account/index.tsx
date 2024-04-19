@@ -54,7 +54,15 @@ const Account = () => {
             </Button>
             <MultipleDatesPicker
                 open={open}
-                selectedDates={selectedDates}
+                selectedDates={[
+                    new Date("2024-04-11"),
+                    new Date("2024-04-12"),
+                    new Date("2024-04-15"),
+                    new Date("2024-04-16"),
+                    new Date("2024-04-17"),
+                    new Date("2024-04-18"),
+                ]}
+                readOnly
                 onCancel={() => setOpen(false)}
                 onSubmit={handleDateSubmit}
             />
