@@ -1,6 +1,4 @@
-﻿using MySqlConnector;
-using System.Data;
-using Timer = System.Windows.Forms.Timer;
+﻿using Timer = System.Windows.Forms.Timer;
 namespace CanteenApp
 {
     public partial class UserDataScreen : UserControl

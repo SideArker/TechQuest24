@@ -30,7 +30,6 @@
         {
             this.dbConnection = new MySqlConnector.MySqlConnection();
             this.GetUser = new MySqlConnector.MySqlCommand();
-            this.AddUser = new MySqlConnector.MySqlCommand();
             this.ScanCodeText = new System.Windows.Forms.Label();
             this.ZSTLogo = new System.Windows.Forms.PictureBox();
             this.MainScreenPanel = new System.Windows.Forms.Panel();
@@ -62,13 +61,6 @@
             this.GetUser.Connection = this.dbConnection;
             this.GetUser.Transaction = null;
             this.GetUser.UpdatedRowSource = System.Data.UpdateRowSource.None;
-            // 
-            // AddUser
-            // 
-            this.AddUser.CommandTimeout = 0;
-            this.AddUser.Connection = this.dbConnection;
-            this.AddUser.Transaction = null;
-            this.AddUser.UpdatedRowSource = System.Data.UpdateRowSource.None;
             // 
             // ScanCodeText
             // 
@@ -128,7 +120,7 @@
             // 
             // GetMeal
             // 
-            this.GetMeal.CommandText = "SELECT `days` FROM `meals` WHERE `id` = @id;";
+            this.GetMeal.CommandText = "SELECT meals.days FROM `meals` WHERE @id = meals.id;";
             this.GetMeal.CommandTimeout = 0;
             this.GetMeal.Connection = this.dbConnection;
             this.GetMeal.Transaction = null;
@@ -136,9 +128,8 @@
             // 
             // GetUserData
             // 
-            this.GetUserData.CommandText = "SELECT consumers.name, consumers.surname, consumers.class, consumers.isTeacher, m" +
-    "eals.days FROM `consumers`, `meals` WHERE consumers.id = 90000595 AND consumers." +
-    "id = meals.id;";
+            this.GetUserData.CommandText = "SELECT consumers.name, consumers.surname, consumers.class, consumers.isTeacher FR" +
+    "OM `consumers` WHERE consumers.id = @id;";
             this.GetUserData.CommandTimeout = 0;
             this.GetUserData.Connection = this.dbConnection;
             this.GetUserData.Transaction = null;
@@ -212,6 +203,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchIcon)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -219,7 +211,6 @@
 
         private MySqlConnector.MySqlConnection dbConnection;
         private MySqlConnector.MySqlCommand GetUser;
-        private MySqlConnector.MySqlCommand AddUser;
         private Label ScanCodeText;
         private PictureBox ZSTLogo;
         private UserDataScreen userDataScreen;

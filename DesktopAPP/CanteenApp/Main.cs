@@ -1,13 +1,7 @@
 using BarcodeScannerLib;
 using GlobalHook;
 using MySqlConnector;
-using System.Data;
-using System.Text.Json.Serialization;
-using Timer = System.Windows.Forms.Timer;
 using Newtonsoft.Json;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
-using System.Reflection;
 
 namespace CanteenApp
 {
@@ -28,6 +22,7 @@ namespace CanteenApp
             barcodeScanner.OnScanned += onBarcodeScan;
             GetUser.Parameters.Add("@id", MySqlDbType.VarChar);
             GetUserData.Parameters.Add("@id", MySqlDbType.VarChar);
+            GetMeal.Parameters.Add("@id", MySqlDbType.VarChar);
             searchBar.SearchBox.TextChanged += new EventHandler(OnTextChange);
             searchBar.BringToFront();
         }
@@ -87,7 +82,7 @@ namespace CanteenApp
 
                 using (MySqlDataReader reader = GetUserData.ExecuteReader())
                 {
-                    if(reader.HasRows)
+                    if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
@@ -96,40 +91,9 @@ namespace CanteenApp
                             userDataScreen.Surname.Text = (string)reader.GetValue(1);
                             userDataScreen.Class.Text = (string)reader.GetValue(2);
                             userDataScreen.Role.Text = (bool)reader.GetValue(3) == true ? "Nauczyciel" : "Uczeñ";
-
-                            string json = (string)reader.GetValue(4);
-
-                            DaysSchema schema = JsonConvert.DeserializeObject<DaysSchema>(json);
-
-                            int currentDay = DateTime.Now.Day;
-                            int currentMonth = DateTime.Now.Month;
-
-                            var currentSchemaDay = schema.Days.Find(x => x.Day == currentDay && x.Month == currentMonth);
-
-                            DayInfo dayInfo = currentSchemaDay as DayInfo;
-                            
-                            if (dayInfo != null)
-                            {
-                                if(dayInfo.IsGiven)
-                                {
-                                    userDataScreen.DinnerStatus.Text = "WYDANY";
-                                    userDataScreen.DinnerStatus.ForeColor = Color.Orange;
-
-                                }
-                                else
-                                {
-                                    userDataScreen.DinnerStatus.Text = "POSIADANY";
-                                    userDataScreen.DinnerStatus.ForeColor = Color.Green;
-                                }
-                            }
-                            else
-                            {
-                                userDataScreen.DinnerStatus.Text = "NIE KUPIONY";
-                                userDataScreen.DinnerStatus.ForeColor = Color.Red;
-                            }
-
                         }
                     }
+
 
                     reader.Close();
                 }
@@ -144,6 +108,73 @@ namespace CanteenApp
                 dbConnection.Close();
             }
 
+            // changing dinner state
+            try
+            {
+                dbConnection.Open();
+                GetMeal.Parameters["@id"].Value = e.barcode;
+
+                using (MySqlDataReader reader = GetMeal.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            string json = (string)reader.GetValue(0);
+
+                            DaysSchema schema = JsonConvert.DeserializeObject<DaysSchema>(json);
+
+                            if (schema != null)
+                            {
+                                int currentDay = DateTime.Now.Day;
+                                int currentMonth = DateTime.Now.Month;
+
+                                var currentSchemaDay = schema.Days.Find(x => x.Day == currentDay && x.Month == currentMonth);
+
+                                DayInfo dayInfo = currentSchemaDay as DayInfo;
+
+                                if (dayInfo != null)
+                                {
+                                    if (dayInfo.IsGiven)
+                                    {
+                                        userDataScreen.DinnerStatus.Text = "WYDANY";
+                                        userDataScreen.DinnerStatus.ForeColor = Color.Orange;
+
+                                    }
+                                    else
+                                    {
+                                        userDataScreen.DinnerStatus.Text = "POSIADANY";
+                                        userDataScreen.DinnerStatus.ForeColor = Color.Green;
+                                    }
+                                }
+                                else
+                                {
+                                    userDataScreen.DinnerStatus.Text = "NIE KUPIONY";
+                                    userDataScreen.DinnerStatus.ForeColor = Color.Red;
+                                }
+
+                            }
+                        }
+                    }
+                    else
+                    {
+                        userDataScreen.DinnerStatus.Text = "NIE KUPIONY";
+                        userDataScreen.DinnerStatus.ForeColor = Color.Red;
+                    }
+
+
+                    reader.Close();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dbConnection.Close();
+            }
 
 
         }
@@ -183,7 +214,7 @@ namespace CanteenApp
 
         void OnTextChange(object sender, EventArgs e)
         {
-            if(searchBar.SearchBox.Text.Length >= 8)
+            if (searchBar.SearchBox.Text.Length >= 8)
             {
                 onBarcodeScan(null, new OnScanEventArgs(searchBar.SearchBox.Text));
             }
