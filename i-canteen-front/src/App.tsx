@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Hero from "./components/hero/index"
 import Shedule from "./components/shedule/index"
 import Footer from './components/footer';
-
+import Admin from './pages/admin';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
                 <Shedule />
               </>
             } />
-            <Route  path="/admin"/>
+            <Route  path="/admin" element={<Admin />} />
           </Routes>
           <Footer />
         </BrowserRouter>

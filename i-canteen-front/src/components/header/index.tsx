@@ -21,12 +21,16 @@ const Header = () => {
 
   return (
     <header 
-        className={`fixed top-0 left-0 right-0 p-5 z-50 transition-all duration-200 ${isScrolled ? 'bg-[#1d4f91]' : 'bg-[#265da6]'}`}
-        style={{ height: isScrolled ? '80px' : '120px' }}
-    >
+    className={`fixed top-0 left-0 right-0 p-5 z-50 transition-all duration-200 ${
+        isScrolled ? 'md:bg-[#1d4f91]' : 'md:bg-[#265da6]'
+    } bg-[#265da6]`}  
+    style={{ height: isScrolled ? '80px' : '120px' }}
+>
       <nav className="max-w-6xl mx-auto flex items-center justify-between h-full">
         <div className="flex items-center flex-shrink-0 h-full">
-          <img src={logoZst} alt="ZST Leżajsk" className="h-full" />
+          <Link to="/" className='w-[140px]'>
+            <img src={logoZst} alt="ZST Leżajsk" className="h-full" />
+          </Link>
         </div>
         <div className="md:hidden">
           <button className="flex items-center justify-center text-white focus:outline-none">
