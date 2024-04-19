@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "j+wazMz25vk/hTq4RLNU2GbEfq7F7x6iF44Q18DBFYf8hQ23lBSisbQDvZYBfbXzoNYYf83HETJrZKCIGAhVrQ==",
+  "dgSpecHash": "A5wzDPP9olzAVpYDxDLJC8Zk13zheiMc/QbyJkZLs+PKp60Ksip/wGukRLccofU28cROubP7hNcRfPpbN1aubA==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\TechQuest24\\DesktopAPP\\CanteenApp\\CanteenApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\darks\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
     "C:\\Users\\darks\\.nuget\\packages\\mysqlconnector\\2.3.6\\mysqlconnector.2.3.6.nupkg.sha512",
+    "C:\\Users\\darks\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\darks\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.2\\system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512",
     "C:\\Users\\darks\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],

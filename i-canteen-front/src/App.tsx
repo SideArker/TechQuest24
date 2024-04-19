@@ -21,10 +21,18 @@ function App() {
               </>
             } />
             <Route  path="/admin" element={<Admin />} />
+<<<<<<< HEAD
             <Route path="/konto/:login" element={
                 <Account />
             } />
             <Route  path="/admin"/>
+=======
+
+            <Route path="/konto/:login" element={
+                <Account />
+            } />
+
+>>>>>>> a41b16acd6429ec1f29260eb133988fbbcbb5e86
           </Routes>
           <Footer />
         </BrowserRouter>
