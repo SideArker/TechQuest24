@@ -5,8 +5,8 @@ const ScheduleResponsive = () => {
   const [opened, { open, close }] = useDisclosure(false);
   return (
     <div>
-        <Modal opened={opened} onClose={close} withCloseButton={false}>
-            Modal without header, press escape or click on overlay to close
+        <Modal opened={opened} onClose={close} withCloseButton={false} className='border-2 barder-red-500'>
+            MODAL DZIAŁA!!!!!
         </Modal>
         <Button onClick={open}>Open Modal</Button>
     </div>

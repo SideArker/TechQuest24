@@ -7,7 +7,6 @@ import ScheduleResponsive from './ScheduleResponsive';
 
 
 const Schedule = () => {
-    const [opened, { open, close }] = useDisclosure(false);
 
   return (
     <>
@@ -17,10 +16,7 @@ const Schedule = () => {
                 <div className='bg-[#3279D3] w-[75%] md:w-[45%] mx-auto rounded-full text-white absolute md:relative top-[-35px]  shadow-md left-1/2 transform -translate-x-1/2 md:left-auto md:translate-x-0'>
                     <h1 className='text-center p-2 font-extrabold text-[24px] md:text-[34px]'>Jadłospis</h1>
                 </div>
-                <Modal opened={opened} onClose={close} withCloseButton={false}>
-                    Modal without header, press escape or click on overlay to close
-                </Modal>
-                <Button onClick={open}>Open Modal</Button>
+              
 
                 <MantineProvider >
                     <ScheduleResponsive />
