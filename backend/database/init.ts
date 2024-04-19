@@ -1,7 +1,10 @@
 import Consumer from './models/consumer'
-const isDev = process.env.NODE_ENV === 'development'
+import meal from './models/meal'
+import menu from './models/menu'
 
 const dbInit = () => {
     Consumer.sync({ alter: true })
+    meal.sync({alter: true})
+    menu.sync({alter: true})
 }
 export default dbInit 

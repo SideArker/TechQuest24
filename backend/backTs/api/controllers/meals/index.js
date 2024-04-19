@@ -32,35 +32,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = require("express");
-const consumerController = __importStar(require("../controllers/consumers/index"));
-const consumersRouter = (0, express_1.Router)();
-consumersRouter.get('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log("dhadahsdhs");
-    const id = Number(req.params.id);
-    const result = yield consumerController.getById(id);
-    return res.status(200).send(result);
-}));
-consumersRouter.put('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const id = Number(req.params.id);
-    const payload = req.body;
-    const result = yield consumerController.update(id, payload);
-    return res.status(201).send(result);
-}));
-consumersRouter.delete('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const id = Number(req.params.id);
-    const result = yield consumerController.deleteById(id);
-    return res.status(204).send({
-        success: result
-    });
-}));
-consumersRouter.post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const payload = req.body;
-    const result = yield consumerController.create(payload);
-    return res.status(200).send(result);
-}));
-consumersRouter.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const results = yield consumerController.getAll();
-    return res.status(200).send(results);
-}));
-exports.default = consumersRouter;
+exports.getAll = exports.deleteById = exports.getById = exports.update = exports.create = void 0;
+const service = __importStar(require("../../services/mealsService"));
+const create = (payload) => __awaiter(void 0, void 0, void 0, function* () {
+    return yield service.create(payload);
+});
+exports.create = create;
+const update = (id, payload) => __awaiter(void 0, void 0, void 0, function* () {
+    return yield service.update(id, payload);
+});
+exports.update = update;
+const getById = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    return yield service.getById(id);
+});
+exports.getById = getById;
+const deleteById = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    const isDeleted = yield service.deleteById(id);
+    return isDeleted;
+});
+exports.deleteById = deleteById;
+const getAll = () => __awaiter(void 0, void 0, void 0, function* () {
+    return yield service.getAll();
+});
+exports.getAll = getAll;

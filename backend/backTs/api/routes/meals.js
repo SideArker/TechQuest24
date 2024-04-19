@@ -33,34 +33,33 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const consumerController = __importStar(require("../controllers/consumers/index"));
-const consumersRouter = (0, express_1.Router)();
-consumersRouter.get('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log("dhadahsdhs");
+const mealController = __importStar(require("../controllers/meals/index"));
+const mealsRouter = (0, express_1.Router)();
+mealsRouter.get('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const id = Number(req.params.id);
-    const result = yield consumerController.getById(id);
+    const result = yield mealController.getById(id);
     return res.status(200).send(result);
 }));
-consumersRouter.put('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+mealsRouter.put('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const id = Number(req.params.id);
     const payload = req.body;
-    const result = yield consumerController.update(id, payload);
+    const result = yield mealController.update(id, payload);
     return res.status(201).send(result);
 }));
-consumersRouter.delete('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+mealsRouter.delete('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const id = Number(req.params.id);
-    const result = yield consumerController.deleteById(id);
+    const result = yield mealController.deleteById(id);
     return res.status(204).send({
         success: result
     });
 }));
-consumersRouter.post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+mealsRouter.post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const payload = req.body;
-    const result = yield consumerController.create(payload);
+    const result = yield mealController.create(payload);
     return res.status(200).send(result);
 }));
-consumersRouter.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const results = yield consumerController.getAll();
+mealsRouter.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const results = yield mealController.getAll();
     return res.status(200).send(results);
 }));
-exports.default = consumersRouter;
+exports.default = mealsRouter;
