@@ -1,15 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Header from "./components/header/index"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Hero from "./components/hero/index"
-
+import Shedule from "./components/shedule/index"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <div>
@@ -19,6 +14,7 @@ function App() {
             <Route path="/" element={
               <>
                 <Hero />
+                <Shedule />
               </>
             } />
           </Routes>

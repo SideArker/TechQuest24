@@ -5,7 +5,6 @@ import study from "../../assets/education.svg"
 
 const Hero = () => {
   return (
-    <>
     <section className='bg-[#265da6] h-[75vh] md:h-[90vh] relative z-[-1] flex justify-center items-center'>
         <img src={wave} alt="wave effect" className='absolute bottom-0 z-[1]' />
         <div className='justify-between hidden md:flex mw-[100%] md:w-[90%] absolute bottom-0 z-[199]'>
@@ -18,10 +17,7 @@ const Hero = () => {
                 Odkryj szkolną stołówkę na nowo! 🍽️ Zamawiaj pyszne i zdrowe obiady 🥗 za kilka kliknięć - oszczędność i komfort w zasięgu ręki. 📚💸
             </p>
             </div>
-        
     </section>
-    <div className='h-[10000px]'></div>
-    </>
   )
 }
 
