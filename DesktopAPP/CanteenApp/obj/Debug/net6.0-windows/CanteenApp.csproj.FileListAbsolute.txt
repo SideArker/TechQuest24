@@ -19,6 +19,7 @@ C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\obj\Debug\net6.0-windows\CanteenApp.
 C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\bin\Debug\net6.0-windows\BarcodeScannerLib.dll
 C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\bin\Debug\net6.0-windows\GlobalHook.dll
 C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\obj\Debug\net6.0-windows\CanteenApp.csproj.CopyComplete
+C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
 C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
 C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\bin\Debug\net6.0-windows\MySqlConnector.dll
-C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
+C:\GitHub\TechQuest24\DesktopAPP\CanteenApp\obj\Debug\net6.0-windows\CanteenApp.UserDataScreen.resources

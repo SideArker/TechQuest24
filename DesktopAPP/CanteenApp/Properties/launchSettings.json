@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CanteenApp": {
+      "commandName": "Project",
+      "commandLineArgs": "-d"
+    }
+  }
+}
