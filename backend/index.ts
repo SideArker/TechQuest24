@@ -1,10 +1,13 @@
 import express, { json } from 'express'
-const app = express()
+import router from './api/routes/index'
+require("dotenv").config()
+const app = express()  
 
 app.get("/api", (req, res) => {
     res.json({ message: "Hello from server!" });
   });
-  
-app.listen(process.env.PORT, () => {
-    console.log("hi");
+   
+app.use("/api/v1",router)
+app.listen(3001, () => {
+    console.log(process.env.DB_HOST);
   });

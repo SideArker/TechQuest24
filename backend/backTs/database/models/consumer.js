@@ -28,6 +28,7 @@ consumer.init({
         type: sequelize_1.DataTypes.BOOLEAN
     }
 }, {
+    timestamps: false,
     sequelize: config_1.default,
 });
 exports.default = consumer;

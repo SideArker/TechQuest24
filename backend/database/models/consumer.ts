@@ -9,7 +9,7 @@ interface ConsumerAtributes {
   isTeacher:boolean;
 }
 export interface ConsumerInput extends Required<ConsumerAtributes> {}
-export interface ConsumerOuput extends Required<ConsumerAtributes> {}
+export interface ConsumerOutput extends Required<ConsumerAtributes> {}
 
 class consumer extends Model<ConsumerAtributes, ConsumerInput> implements ConsumerAtributes {
     public id!: string
@@ -40,7 +40,9 @@ class consumer extends Model<ConsumerAtributes, ConsumerInput> implements Consum
     isTeacher: {
       type: DataTypes.BOOLEAN
     }
-  }, {
+  }, 
+  {
+    timestamps: false,
     sequelize: sequelizeConnection,
   })
   
