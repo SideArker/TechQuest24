@@ -20,16 +20,12 @@ function App() {
                 <Shedule />
               </>
             } />
-<<<<<<< HEAD
             <Route  path="/admin" element={<Admin />} />
-=======
 
             <Route path="/konto/:login" element={
                 <Account />
             } />
-            <Route  path="/admin"/>
 
->>>>>>> b4fc5e7dbab10e7e3aa45dac9eb547b1433f7772
           </Routes>
           <Footer />
         </BrowserRouter>

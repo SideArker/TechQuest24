@@ -11,29 +11,23 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@date-io/date-fns": "^3.0.0",
-=======
     "@ambiot/material-ui-multiple-dates-picker": "^1.0.3",
->>>>>>> b4fc5e7dbab10e7e3aa45dac9eb547b1433f7772
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mantine/core": "^7.8.0",
     "@mantine/hooks": "^7.8.0",
-<<<<<<< HEAD
     "@mui/lab": "^5.0.0-alpha.170",
     "@mui/material": "^5.15.15",
     "@mui/x-date-pickers": "^7.2.0",
     "@mui/x-date-pickers-pro": "^7.2.0",
     "date-fns": "^3.6.0",
-=======
     "@mui/icons-material": "^5.15.15",
     "@mui/lab": "^5.0.0-alpha.170",
     "@mui/material": "^5.15.15",
     "@mui/x-date-pickers": "^7.2.0",
     "date-fns": "^3.6.0",
     "dayjs": "^1.11.10",
->>>>>>> b4fc5e7dbab10e7e3aa45dac9eb547b1433f7772
     "hamburger-react": "^2.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
